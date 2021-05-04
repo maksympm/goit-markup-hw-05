@@ -17,9 +17,9 @@
             <nav class="site-nav">
                 <a class="link logo main-nav" href="./index.html"> <span class="logo-clr">Web</span><span class="logo logo-alt-clr">Studio</span></a>
                 <ul class="nav-list list">
-                    <li class="item"><a class="link" href="./index.html">Студия</a></li>
-                    <li class="item"><a class="link" href="./portfolio.html">Портфолио</a></li>
-                    <li class="item"><a class="link" href="">Контакты</a></li>
+                    <li class="item"><a class="link menu-link" href="./index.html">Студия</a></li>
+                    <li class="item"><a class="link menu-link" href="./portfolio.html">Портфолио</a></li>
+                    <li class="item"><a class="link menu-link" href="">Контакты</a></li>
                 </ul>
             </nav>
             <ul class="list contact-links">
@@ -44,7 +44,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="btn">Заказать услугу</button>
+                <button type="button" class="btn" data-modal-open>Заказать услугу</button>
             </div>
         </section>
         <section class="section">
@@ -98,13 +98,28 @@
                 <h2 class="section-title">Чем мы занимаемся</h2>
                 <ul class="img-list list flex-container">
                     <li class="item">
-                        <img src="./images/studio/1.jpg" alt="изображение процесса разметки страницы" width="370">
+                        <div class="works-overlay">
+                            <img src="./images/studio/1.jpg" alt="изображение процесса разметки страницы" width="370">
+                            <div class="works-description">
+                                <h3 class="works-text">Десктопные приложения</h3>
+                            </div>
+                        </div>
                     </li>
                     <li class="item">
-                        <img src="./images/studio/2.jpg" alt="размещение контента на экране телефона" width="370">
+                        <div class="works-overlay">
+                            <img src="./images/studio/2.jpg" alt="размещение контента на экране телефона" width="370">
+                            <div class="works-description">
+                                <h3 class="works-text">Мобильные приложения</h3>
+                            </div>
+                        </div>
                     </li>
                     <li class="item">
-                        <img src="./images/studio/3.jpg" alt="выбор цвета из спектра" width="370">
+                        <div class="works-overlay">
+                            <img src="./images/studio/3.jpg" alt="выбор цвета из спектра" width="370">
+                            <div class="works-description">
+                                <h3 class="works-text">Дизайнерские решения</h3>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -362,6 +377,11 @@
                 </ul>
             </div>
         </div>
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <button data-modal-close>Закрыть</button>
+            </div>
+        </div>
     </footer>
     <script>
         const { height: pageHeaderHeight } = document
@@ -369,5 +389,6 @@
             .getBoundingClientRect();
         document.body.style.paddingTop = '${pageHeaderHeight}px';    
     </script>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
